@@ -27,7 +27,7 @@ $ sudo make && sudo make install
 
 ## 2. 准备
 
-2.1. **将 `TURN-Server-Test/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下**
+2.1. **将 `test_program/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下**
 
 2.2. **编译生成可执行文件 `test`**
 
