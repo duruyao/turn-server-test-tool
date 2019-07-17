@@ -1,6 +1,6 @@
 # TURN-Server Multiple Test Program
 
-> Written by RUyao Du.
+> Written by Ruyao Du.
 
 ## 1. 前提
 
@@ -11,7 +11,7 @@
 1.4. **安装依赖 `OpenSSL`, `Libevent`**
 
 ```shell
-$ $ sudo apt install openssl openssl-devel openssl-libs libevent libevent-devel
+$ sudo apt install openssl openssl-devel openssl-libs libevent libevent-devel
     ...
 ```
 
@@ -27,14 +27,14 @@ $ sudo make && sudo make install
 
 ## 2. 准备
 
-2.1. **将 `test_program/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下**
+2.1. **将 `TURN-Server-Test/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下**
 
 2.2. **编译生成可执行文件 `test`**
 
 ```shell
 $ make
 g++ multiple_test.cpp -o test
-...
+    ...
 ```
 
 2.3. **确保本地有 Python3 环境，并安装外部包 `numpy` 、`matplotlib`**
@@ -42,9 +42,9 @@ g++ multiple_test.cpp -o test
 ```shell
 $ make install
 pip3 install numpy
-...
+    ...
 pip3 install matplotlib
-...
+    ...
 ```
 
 2.4. **关于 server 与 client 运行时的相关参数，可以通过修改 `Makefile` 调整，请仔细阅读 `Makefile`**
@@ -69,9 +69,7 @@ Options:
            -f <folder>     A new folder to store data (default: yy-mm-dd/).
            -c <execute>    Direction of the executable file (default: ./turnutils_uclient).
            -s <sleep>      Rand (10 ~ 20) * s as time of sleep after socket error (default: 10 s).
-Example:
-           ./test -t 10 -m 20 -n 5 -I 1280 -e 192.168.17.8 -A 192.168.22.72
-
+    ...
 ```
 
 2.6. **`Makefile` 中有关 server 各个参数详情，在 turnserver 的 `bin/` 目录下执行如下命令**
@@ -88,7 +86,7 @@ Options:
 						(Default: 5349).
 						Note: actually, "plain" TCP & UDP sessions can connect to the TLS & DTLS port(s), too,
 						if allowed by configuration. The TURN server
-
+    ...
 ```
 
 2.7. **目录 `server_conf/` 下应放置 turnserver 的配置文件 `turnserver.conf`, 已存在，可适当修改**
@@ -123,7 +121,7 @@ $ make server
 
 ![](other_img/make_server.png)
 
-3.4. **运行 peer, 运行 client**
+3.4. **分别运行 peer, client（两个终端）**
 
 ```shell
 $ make peer         
