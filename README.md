@@ -136,3 +136,7 @@ $ make peer
 ### 3.5. 测试程序运行完毕，会自动调用 `rate_draw.py` 绘制丢包率的散点图，生成图片 `rate_draw.png`
 
 ![](other_img/rate_draw.png)
+
+## 4. 往期测试报告
+
+- [参考我的这篇文章](https://graycat0918.github.io/2019/07/12/turnserver-packet-loss-test/#more)
