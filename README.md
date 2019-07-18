@@ -1,21 +1,21 @@
 # TURN-Server Multiple Test Program
 
-> Written by Ruyao Du.
+> Written by Du RuYao for Zhang Jian and Cai ZhiTong.
 
 ## 1. 前提
 
-1.1. **准备 Linux 操作系统（建议[Ubuntu 18.04.2 LTS](https://ubuntu.com/download/desktop)）**
+### 1.1. 准备 Linux 操作系统（建议[Ubuntu 18.04.2 LTS](https://ubuntu.com/download/desktop)）
 
-1.2. **下载当前操作系统适用的 [turnserver-3.2.3.95](http://turnserver.open-sys.org/downloads/v3.2.3.95/)**
+### 1.2. 下载当前操作系统适用的 [turnserver-3.2.3.95](http://turnserver.open-sys.org/downloads/v3.2.3.95/)
 
-1.4. **安装依赖 `OpenSSL`, `Libevent`**
+### 1.4. 安装依赖 `OpenSSL`, `Libevent`
 
 ```shell
 $ sudo apt install openssl openssl-devel openssl-libs libevent libevent-devel
     ...
 ```
 
-1.4. **编译 & 安装 turnserver**
+### 1.5. 编译 & 安装 turnserver
 
 ```shell
 $ cd turnserver-3.2.3.95/
@@ -27,9 +27,9 @@ $ sudo make && sudo make install
 
 ## 2. 准备
 
-2.1. **将 `TURN-Server-Test/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下**
+### 2.1. 将 `TURN-Server-Test/` 整个目录拷贝到 turnserver 源代码编译生成的 `bin/` 目录下
 
-2.2. **编译生成可执行文件 `test`**
+### 2.2. 编译生成可执行文件 `test`
 
 ```shell
 $ make
@@ -37,7 +37,7 @@ g++ multiple_test.cpp -o test
     ...
 ```
 
-2.3. **确保本地有 Python3 环境，并安装外部包 `numpy` 、`matplotlib`**
+### 2.3. 确保本地有 Python3 环境，并安装外部包 `numpy` 、`matplotlib`
 
 ```shell
 $ make install
@@ -47,11 +47,11 @@ pip3 install matplotlib
     ...
 ```
 
-2.4. **关于 server 与 client 运行时的相关参数，可以通过修改 `Makefile` 调整，请仔细阅读 `Makefile`**
+### 2.4. 关于 server 与 client 运行时的相关参数，可以通过修改 `Makefile` 调整，请仔细阅读 `Makefile`
 
 ![](other_img/makefile.png)
 
-2.5. **`Makefile` 中有关 client 各个参数详情，在当前目录下执行如下命令**
+### 2.5. `Makefile` 中有关 client 各个参数详情，在当前目录下执行如下命令
 
 ```shell
 $ ./test -h
@@ -72,7 +72,7 @@ Options:
     ...
 ```
 
-2.6. **`Makefile` 中有关 server 各个参数详情，在 turnserver 的 `bin/` 目录下执行如下命令**
+### 2.6. `Makefile` 中有关 server 各个参数详情，在 turnserver 的 `bin/` 目录下执行如下命令
 
 ```shell
 $ ./turnserver -h
@@ -89,13 +89,13 @@ Options:
     ...
 ```
 
-2.7. **目录 `server_conf/` 下应放置 turnserver 的配置文件 `turnserver.conf`, 已存在，可适当修改**
+### 2.7. 目录 `server_conf/` 下应放置 turnserver 的配置文件 `turnserver.conf`, 已存在，可适当修改
 
 ## 3. 测试
 
-3.1. **局域网中进行测试时，建议将 server 与 client(peer) 运行在不同的机器上**
+### 3.1. 局域网中进行测试时，建议将 server 与 client(peer) 运行在不同的机器上
 
-3.2. **分别查看server、client、peer的IP地址，并修改 `Makefile` 中的IP部分**
+### 3.2. 分别查看server、client、peer的IP地址，并修改 `Makefile` 中的IP部分
 
 ```shell
 $ ifconfig
@@ -111,9 +111,9 @@ wlp2s0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 ![](other_img/makefile_ip.png)
 
-**红色内部为 server 的IP地址，黄色为 peer 的IP地址**
+**红色边框内为 server 的IP地址，黄色边框内为 peer 的IP地址**
 
-3.3. **先运行 server**
+### 3.3. 运行 server（早于 client）
 
 ```shell
 $ make server
@@ -121,7 +121,7 @@ $ make server
 
 ![](other_img/make_server.png)
 
-3.4. **分别运行 peer, client（两个终端）**
+### 3.4. 分别运行 peer, client（两个终端）
 
 ```shell
 $ make peer         
@@ -133,6 +133,6 @@ $ make peer
 
 ![](other_img/make_peer_client.png)
 
-3.5. **测试程序运行完毕，会自动调用 `rate_draw.py` 绘制丢包率的散点图，生成图片 `rate_draw.png`**
+### 3.5. 测试程序运行完毕，会自动调用 `rate_draw.py` 绘制丢包率的散点图，生成图片 `rate_draw.png`
 
 ![](other_img/rate_draw.png)
