@@ -1,6 +1,6 @@
 # TURN-Server Multiple Test Program
 
-> Written by Du RuYao for Zhang Jian and Cai ZhiTong.
+> The docs is written by Du RuYao for Zhang Jian, Cai ZhiTong and new member, who will test the packet loss rate of Turn-Server in mutliple roads.
 
 ## 1. 前提
 
