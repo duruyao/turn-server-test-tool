@@ -215,7 +215,7 @@ int main(int argc, char **argv) {
     }
     /* Draw and save rate image. */
 	cout << "[*] " << draw_cmd << endl;
-	execl("/bin/sh", "sh", "-c", draw_cmd, (char *)0);
+	system(draw_cmd.c_str());
     return 0;
 }
 
