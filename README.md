@@ -1,7 +1,5 @@
 # TURN-Server Multiple Test Program
 
-> The docs is written by Du RuYao for Zhang Jian, Cai ZhiTong and new member, who will test the packet loss rate of Turn-Server in mutliple roads.
-
 ## 1. 前提
 
 ### 1.1. 准备 Linux 操作系统（建议[Ubuntu 18.04.2 LTS](https://ubuntu.com/download/desktop)）
